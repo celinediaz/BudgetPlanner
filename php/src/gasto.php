@@ -5,7 +5,7 @@
   <?php require_once 'includes/cabecera.php';
 ?>
  <?php  
- 		$gasto_actual = conseguir_Gasto($db,$_GET['id']);
+ 		$gasto_actual = conseguir_Gasto($db, $_GET['id']);
 		$cat = conseguir_Categoria($db,$gasto_actual['categoria_id']);
  		if (!isset($gasto_actual['gasto_id'])) {
  			header("Location: index.php");

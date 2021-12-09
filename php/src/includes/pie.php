@@ -5,7 +5,7 @@
 	<div class="container">
   		<div class="row">
     		<div class="col">
-            <p>Derechos Reservados. ACDR & KGM &COPY; <?php echo date("Y")?>. Tema de bootstrap: hackerthemes</p>
+            <p>Derechos Reservados. BudgetPlanner &COPY; <?php echo date("Y")?>. Tema de bootstrap: hackerthemes</p>
 				<br>
 			</div>
 		</div>

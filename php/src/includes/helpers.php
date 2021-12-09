@@ -57,7 +57,7 @@ function conseguir_Gastos($conexion, $categoria){
 }
 
 function conseguir_Gasto($conexion,$id){
-	$sql = "SELECT categorias.nombre, Gasto.* FROM gasto INNER JOIN categorias ON Gasto.categoria_id = categorias.id where Gasto.gasto_id =$id;";
+	$sql = "SELECT categorias.nombre, Gasto.* FROM Gasto INNER JOIN categorias ON Gasto.categoria_id = categorias.id where Gasto.gasto_id =$id;";
 	$gasto = mysqli_query($conexion, $sql);
 	
 	$resultado = array();
@@ -81,8 +81,11 @@ $resultado = array();
 }
 
 function todos_Gastos($conexion, $id){
-$sql = "SELECT categorias.*, Gasto.* FROM gasto INNER JOIN categorias ON Gasto.categoria_id = categorias.id where categorias.user_id =$id ORDER BY gasto.fecha DESC;";
+$sql = "SELECT categorias.*, Gasto.* FROM Gasto INNER JOIN categorias ON Gasto.categoria_id = categorias.id where categorias.user_id =$id ORDER BY Gasto.fecha DESC;";
 $gastos= mysqli_query($conexion,$sql);
 $resultado = array();
-return $gastos;
+	if ($gastos && mysqli_num_rows($gastos)>=1) {
+		$resultado= $gastos;
+	}
+return $resultado;
 }

@@ -1,9 +1,9 @@
 <?php
 // Conexión
-$servidor = 'localhost';
-$usuario = 'root';
-$password = 'root';
-$basededatos = 'budgeting';
+$servidor = 'db';
+$usuario = 'MYSQL_USER';
+$password = 'MYSQL_PASSWORD';
+$basededatos = 'MYSQL_DATABASE';
 $db = mysqli_connect($servidor, $usuario, $password, $basededatos);
 
 mysqli_query($db, "SET NAMES 'utf8'");

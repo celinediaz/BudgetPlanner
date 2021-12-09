@@ -1,5 +1,6 @@
 <?php 
 require_once 'includes/conexion.php';
+require_once 'includes/helpers.php';
 ?>
 <?php 
 require_once 'includes/cabecera.php';
@@ -9,7 +10,7 @@ require_once 'includes/cabecera.php';
     		<div class="col">
                <h1 class="display-4">Todos los gastos</h1>
                 <?php 
-        $gastos = todos_Gastos($db,$_SESSION['usuario']['id']);
+        $gastos = todos_Gastos($db, $_SESSION['usuario']['id'] ?? null);
         if (!empty($gastos)):
             while ($gasto= mysqli_fetch_assoc($gastos)):
      ?>
@@ -29,8 +30,7 @@ require_once 'includes/cabecera.php';
         else:
 
      ?>
-    <h2>No hay gastos aún. Para usar esto crea/entra a tu cuenta, crea una categoría y crea un gasto para esa categoría</h2>
-	<a class="btn btn-primary" href="acc.php">Login/Registrate</a>
+    <h2>No hay gastos aún. </h2>
     <?php endif; ?>
 		   		</div>
 			</div>
